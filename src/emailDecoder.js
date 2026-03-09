@@ -7,6 +7,7 @@ export function decode(hex) {
   }
   return email
 }
+export default decode;
 //=========================================================================================================
 // Cloudflare encrypts emails to prevent scraping. This function decodes them.
 // CF just XORs each byte with a key (the first byte of the hex string) to obfuscate the email address.
