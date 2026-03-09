@@ -6,7 +6,8 @@ async function processOut(html) {
     return {
         "title": $('title').text(),
         "paragraphs": $('p').text(),
-        'a': $('a')
+        'a': $('a').attr('href'),
+        "text": htmlToText(html)
     }
 }
 export default processOut
