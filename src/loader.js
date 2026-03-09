@@ -7,7 +7,7 @@
         url = 'https://' + url
         }
         const res = await fetch(url)
-        if(res.ok) { return await res.text() } else return 'Error'
+        if(res.ok) { return await res.text() } else throw error
         
     }
 

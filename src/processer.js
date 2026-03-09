@@ -5,7 +5,7 @@ async function processOut(html) {
     const $ = cheerio.load(html)
     return {
         "title": $('title').text(),
-        "paragraphs": $('p'),
+        "paragraphs": $('p').text(),
         'a': $('a')
     }
 }
