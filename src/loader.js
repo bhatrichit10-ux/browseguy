@@ -1,6 +1,7 @@
     // import * as fetch from 'fetch'
     import * as cheerio from 'cheerio'
     import { htmlToText } from "html-to-text"
+    import chalk from 'chalk'
     let headers = new Headers({
     "User-Agent"   : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36",
     'Accept-Language' : 'en-US,en;q=0.8',
@@ -17,7 +18,7 @@
             method: 'GET',
             headers: headers
         })
-        if(res.ok) { return await res.text() } else throw error
+        if(res.ok) { return await res.text() } else {console.error(chalk.red("Failed to load page: " + res.status));  return await res.text()} 
         
     }
 

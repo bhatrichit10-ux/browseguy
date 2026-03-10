@@ -5,3 +5,8 @@ my own very little browser which is fully cli and made in Node.JS
 - node-fetch
 - cheerio
 - html-to-text
+
+## Features
+- CLI only
+- Can be used to naviagte
+- Color formatting

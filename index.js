@@ -17,7 +17,7 @@ const links = html.a
   .join("\n")
 
 
- console.log(boxen(html.text, {padding: 1, title: chalk.red(html.title)}))
+ console.log(boxen(html.text, {padding: 1, title: chalk.red(html.title + '- ' + url), titleAlignment: 'center', borderColor: 'blue'}))
 
 if(links.length != 0) {
     console.log(chalk.blue(`Links found on ${url}:` + '\n' + chalk.green(links)))
@@ -36,8 +36,9 @@ const { selectedLink } = await inquirer.prompt([
 ])
 console.log(chalk.blue(`You selected: ${selectedLink}`))
 if(selectedLink.startsWith('/')) {
+  
    process.stdout.write('\x1Bc')
-    main(new URL(selectedLink, url).toString())
+    main(new URL(selectedLink, 'https://' + url).toString())
 }
 else {
    process.stdout.write('\x1Bc')
