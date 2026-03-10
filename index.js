@@ -3,12 +3,16 @@ import processOut from './src/processer.js'
 import load from './src/loader.js'
 import chalk from 'chalk'
 import inquirer from "inquirer"
-
+// import { format } from './src/formatter.js'
 
 async function main(url) {
+  process.stdout.write('\x1Bc')
 let html = await load(url)
+
 html = await processOut(html)
+
 const links = html.a
+  .filter(l => l.href && l.text && l.text.trim().length > 1)
   .map((l, i) => `[${i + 1}] ${l.text} -> ${l.href}`)
   .join("\n")
 
