@@ -18,12 +18,14 @@ const links = html.a
 
 
  console.log(boxen(html.text, {padding: 1, title: chalk.red(html.title)}))
+
 if(links.length != 0) {
     console.log(chalk.blue(`Links found on ${url}:` + '\n' + chalk.green(links)))
     const choices = html.a.map(link => ({
   name: link.text,
   value: link.href
 }))
+
 const { selectedLink } = await inquirer.prompt([
   {
     type: 'list',
