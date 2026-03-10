@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import boxen from 'boxen'
 import processOut from './src/processer.js'
 import load from './src/loader.js'

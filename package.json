@@ -1,6 +1,6 @@
 {
   "name": "browseguy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "my own very little browser which is fully cli and made in Node.JS",
   "main": "index.js",
   "scripts": {
